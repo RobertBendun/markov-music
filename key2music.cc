@@ -13,6 +13,6 @@ int main()
 		auto octave = key / 12;
 		auto note = key % 12;
 
-		std::cout << notes[note] << ' ' << octave << '\n';
+		std::cout << notes[note] << '\t' << octave << '\n';
 	}
 }

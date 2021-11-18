@@ -9,17 +9,17 @@ See also: [Music and Markov Chains on Wikipedia](https://en.wikipedia.org/wiki/M
 - Generate random sequence based on note X follows note Y frequencies in file `example.mid`
 ```console
 $ ./midi/midi-get example.mid | ./random-markov-path 10 | ./key2music
-D# 6
-D# 6
-D# 6
-B 5
-C# 5
-F 5
-B 5
-F 5
-B 5
-B 5
-B 5
+A    6
+C	   6
+A	   6
+B	   6
+C	   7
+C#	 6
+C#	 6
+D#	 6
+D#	 6
+B	   5
+B	   5
 ```
 
 ## Programs
