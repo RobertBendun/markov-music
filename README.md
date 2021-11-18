@@ -26,7 +26,8 @@ B    5
 
 - `graph-markov.cc` - turns Markov chain described by TSV file into Graphviz DOT file
 - `key2music.cc` - transforms key number into note and octave
-- `midi/midi-get.go` - transforms MIDI file into markov chain based on probability of occuring key `X` after key `Y`
+- `midi/bigrams-dur.go` - transforms MIDI file into markov chain based on probability of occuring duration `X` for key `Y`
+- `midi/bigrams-notes.go` - transforms MIDI file into markov chain based on probability of occuring key `X` after key `Y`
 - `random-markov-path.cc` - takes length of path and produces sequence of keys based on probabilities in TSV
 
 ## Dependencies
