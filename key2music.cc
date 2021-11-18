@@ -5,6 +5,8 @@
 #include <ranges>
 #include <algorithm>
 
+#include "tsv.hh"
+
 int main(int argc, char **argv)
 {
 	unsigned column = 0;
@@ -30,29 +32,12 @@ int main(int argc, char **argv)
 		return 0;
 	}
 
-	for (std::string line; std::getline(std::cin, line); ) {
-		auto n = column;
-		bool fst = true;
-		for (auto const column_range : std::views::split(line, '\t')) {
-			if (fst) {
-				fst = false;
-			} else {
-				std::cout << '\t';
-			}
-			std::string column;
-			std::ranges::copy(column_range, std::back_inserter(column));
+	modify_tsv_column(column, [&](std::string const& column) {
+		unsigned key = 0;
+		auto [ptr, _] = std::from_chars(column.data(), column.data() + column.size(), key);
+		assert(ptr != column.data());
 
-			if (--n == 0) {
-				unsigned key = 0;
-				auto [ptr, _] = std::from_chars(column.data(), column.data() + column.size(), key);
-				assert(ptr != column.data());
-
-				auto octave = key / 12, note = key % 12;
-				std::cout << notes[note] << '\t' << octave;
-			} else {
-				std::cout << column;
-			}
-		}
-		std::cout << '\n';
-	}
+		auto octave = key / 12, note = key % 12;
+		std::cout << notes[note] << '\t' << octave;
+	});
 }
