@@ -24,6 +24,7 @@ B    5
 
 ## Programs
 
+- `dur2frac.cc` - turns duration in number of 1/64 to more readable fraction
 - `graph-markov.cc` - turns Markov chain described by TSV file into Graphviz DOT file
 - `key2music.cc` - transforms key number into note and octave
 - `midi/bigrams-dur.go` - transforms MIDI file into markov chain based on probability of occuring duration `X` for key `Y`

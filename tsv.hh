@@ -15,7 +15,7 @@ void modify_tsv_column(unsigned column, auto &&callback)
 			if (fst) {
 				fst = false;
 			} else {
-				std::cout << '\n';
+				std::cout << '\t';
 			}
 			std::string column;
 			std::ranges::copy(column_range, std::back_inserter(column));
@@ -26,5 +26,7 @@ void modify_tsv_column(unsigned column, auto &&callback)
 				std::cout << column;
 			}
 		}
+
+		std::cout << '\n';
 	}
 }
