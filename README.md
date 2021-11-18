@@ -2,6 +2,26 @@
 
 Repository related to topic in title on 'Muzyka algorytmiczna' (_Algorithmic Music_) course at the Adam Mickiewicz University in Poznań.
 
+See also: [Music and Markov Chains on Wikipedia](https://en.wikipedia.org/wiki/Markov_chain#Music).
+
+## Example usage
+
+- Generate random sequence based on note X follows note Y frequencies in file `example.mid`
+```console
+$ ./midi/midi-get example.mid | ./random-markov-path 10 | ./key2music
+D# 6
+D# 6
+D# 6
+B 5
+C# 5
+F 5
+B 5
+F 5
+B 5
+B 5
+B 5
+```
+
 ## Programs
 
 - `graph-markov.cc` - turns Markov chain described by TSV file into Graphviz DOT file
