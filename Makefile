@@ -1,6 +1,6 @@
 CXX=g++
 CXXFLAGS=-Wall -Wextra -O3 -std=c++17
-OUTPUT=graph-markov key2music random-markov-path midi/midi-get
+OUTPUT=graph-markov key2music random-markov-path midi/bigrams-notes
 
 .PHONY: all
 all: $(OUTPUT)

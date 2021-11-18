@@ -1,4 +1,4 @@
-all: midi-get
+all: bigrams-notes
 
 %: %.go
 	go build $<
